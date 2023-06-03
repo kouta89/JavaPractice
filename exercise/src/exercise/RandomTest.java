@@ -5,7 +5,7 @@ public class RandomTest{
 	public static void main(String[] args) {
 		
 		Random rand = new Random();
-		int r = rand.nextInt(21)+1;
+		int r = rand.nextInt(8)+1;
 		
 		Word(r);
 	}
@@ -14,28 +14,28 @@ public class RandomTest{
 		
 		switch(number) {
 		case 1:
-			System.out.println("自己紹介+自己PR");
+			System.out.println("一次面接はどうだったか/なにを思ったか");
 			break;
 		case 2:
-			System.out.println("志望理由");
+			System.out.println("聞きたいことはあるか（逆質問）");
 			break;
 		case 3:
-			System.out.println("自身の強み・弱み");
+			System.out.println("転職きっかけ");
 			break;
 		case 4:
-			System.out.println("何がしたいのか、何が出来るのか");
+			System.out.println("自分の人生観");
 			break;
 		case 5:
-			System.out.println("前職で身についた能力");
+			System.out.println("SEのイメージ");
 			break;
 		case 6:
-			System.out.println("前職で苦労したこと");
+			System.out.println("うちがマッチしていると思うか");
 			break;
 		case 7:
-			System.out.println("前職での成功体験");
+			System.out.println("ITに関連したディスカッション");
 			break;
 		case 8:
-			System.out.println("前職の入社のきっかけ");
+			System.out.println("仕事とは、何が大切だと思うか");
 			break;
 		case 9:
 			System.out.println("尊敬する人はいるか");
