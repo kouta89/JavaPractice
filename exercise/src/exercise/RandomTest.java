@@ -5,7 +5,7 @@ public class RandomTest{
 	public static void main(String[] args) {
 		
 		Random rand = new Random();
-		int r = rand.nextInt(8)+1;
+		int r = rand.nextInt(13)+1;
 		
 		Word(r);
 	}
@@ -14,43 +14,43 @@ public class RandomTest{
 		
 		switch(number) {
 		case 1:
-			System.out.println("一次面接はどうだったか/なにを思ったか");
+			System.out.println("自己PRと経歴を含めた自己紹介");
 			break;
 		case 2:
-			System.out.println("聞きたいことはあるか（逆質問）");
+			System.out.println("前職の入社理由、前職の転職理由");
 			break;
 		case 3:
-			System.out.println("転職きっかけ");
+			System.out.println("なぜエンジニアになりたいか");
 			break;
 		case 4:
-			System.out.println("自分の人生観");
+			System.out.println("他の人からどんな人と言われるか");
 			break;
 		case 5:
-			System.out.println("SEのイメージ");
+			System.out.println("趣味はあるか");
 			break;
 		case 6:
-			System.out.println("うちがマッチしていると思うか");
+			System.out.println("スクールでどのような勉強をしていたか");
 			break;
 		case 7:
-			System.out.println("ITに関連したディスカッション");
+			System.out.println("スクールでの学習後勉強をしているか");
 			break;
 		case 8:
-			System.out.println("仕事とは、何が大切だと思うか");
+			System.out.println("チーム開発時の自身の役割");
 			break;
 		case 9:
-			System.out.println("尊敬する人はいるか");
+			System.out.println("PF制作で苦労したこと");
 			break;
 		case 10:
-			System.out.println("IT業界に興味を持ったきっかけ");
+			System.out.println("転職のきっかけ");
 			break;
 		case 11:
-			System.out.println("就活の軸");
+			System.out.println("前職の業務内容");
 			break;
 		case 12:
-			System.out.println("大学時代の研究内容");
+			System.out.println("志望理由");
 			break;
 		case 13:
-			System.out.println("部活動について");
+			System.out.println("仕事とは、何が大切だと思うか");
 			break;
 		case 14:
 			System.out.println("スクールの学習内容");
