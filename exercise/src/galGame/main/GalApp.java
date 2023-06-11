@@ -2,7 +2,7 @@ package galGame.main;
 import java.util.Random;
 import java.util.Scanner;
 
-import galGame.chara.Gal;
+import galGame.chara.Girl;
 import galGame.chara.Player;
 
 public class GalApp{
@@ -12,7 +12,14 @@ public class GalApp{
 		Random rand = new Random();
 		Scanner sc = new Scanner(System.in);
 		Player player = new Player();
-		Gal gal = new Gal();
+		Girl[] girls = new Girl[5];
+		girls[0].name = "東山霧乃";
+		girls[1].name = "春日小麦";
+		girls[2].name = "鈴木翠華";
+		girls[3].name = "秋月光梨";
+		girls[4].name = "三国蜜柑";
+		girls[5].name = "琴原紫音";
+		
 		
 		//主人公の名前を入力
 		System.out.println("僕の名前は…");

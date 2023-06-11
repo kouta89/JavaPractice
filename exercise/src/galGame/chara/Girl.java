@@ -1,7 +1,7 @@
 package galGame.chara;
 
 
-public class Gal{
+public class Girl{
 	
 	//女の子の名前
 	public String name;
