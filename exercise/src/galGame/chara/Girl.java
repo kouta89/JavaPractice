@@ -4,16 +4,22 @@ package galGame.chara;
 public class Girl{
 	
 	//女の子の名前
-	public String name;
+	public String name = "";
+	
+	public int positionNumber = 0;
+	
 	//好感度
-	public int intimacy = 0;
+	static int intimacy;
 	
-	
-	String showStatus() {
-		return String.format("%s(好感度：%d)", this.name,this.intimacy);
+	public Girl(){
+		intimacy = 0;
 	}
 	
-	void talk() {
+	String showStatus() {
+		return String.format("%s(好感度：%d)", this.name,intimacy);
+	}
+	
+	public void talk() {
 		System.out.println(this.name+"さんがいる");
 		System.out.println("どうしよう、話かけてみようか…");
 	}
