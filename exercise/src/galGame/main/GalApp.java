@@ -3,8 +3,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-import galGame.chara.Girl;
 import galGame.chara.Player;
+import galGame.chara.SecondGirl;
+import galGame.school.School;
 
 public class GalApp{
 	public static void main(String[] args) {
@@ -14,6 +15,9 @@ public class GalApp{
 		Player player = new Player();
 		
 		//キャラクター
+		SecondGirl secondGirl = new SecondGirl();
+		System.out.println(secondGirl.getGirlName());
+		
 //		Girl[] girls = new Girl[5];
 //		girls[0].name = "東山霧乃";
 //		girls[1].name = "春日小麦";
@@ -23,6 +27,10 @@ public class GalApp{
 //		girls[5].name = "琴原紫音";
 		
 		//キャラクターが訪れる場所
+		School school = new School();
+//		school.name = "2-Bの教室";
+//		school.girl = girls;
+//		System.out.println("2-Bの教室にいるのは"+school.girl.name);
 //		School[] school = new School[7];
 //		school[0].name = "2-Bの教室";
 //		school[1].name = "体育館前";
@@ -35,9 +43,14 @@ public class GalApp{
 		
 		//主人公の名前を入力
 		System.out.println("僕の名前は…");
-		player.name = sc.nextLine();
+		player.setPlayerName(sc.nextLine());
 		
-		System.out.println(player.name+"だ。");
+		while((player.getPlayerName().length() < 0) && (player.getPlayerName().length() >= 8)) {
+			System.out.println("1文字以上、８文字以内でご入力ください");
+			player.setPlayerName(sc.nextLine());
+		}
+		
+		System.out.println(player.getPlayerName()+"だ。");
 		
 		System.out.println("もうすぐ夏休みだ…");
 		System.out.println("このままじゃだめだよな。今年こそ、彼女と夏休みを過ごしたい！");
@@ -96,7 +109,7 @@ public class GalApp{
 	static void positioning() {
 		
 		//キャラクター
-		Girl[] girls = new Girl[5];
+		SecondGirl[] girls = new SecondGirl[5];
 		
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		 
@@ -115,9 +128,9 @@ public class GalApp{
         
 		//キャラクターを配置するフィールドを指定する番号を代入
 			
-		for(int i= 0;i<girls.length;i++) {
-			girls[i].positionNumber = list.get(i);
-		}
+//		for(int i= 0;i<girls.length;i++) {
+//			girls[i].setPositionNum(list.get(i));
+//		}
 		
 
 	}
@@ -128,7 +141,7 @@ public class GalApp{
 		Scanner sc = new Scanner(System.in);
 		
 		//キャラクター
-		Girl[] girls = new Girl[5];
+		SecondGirl[] girls = new SecondGirl[5];
 		
 		
 		//選択肢
@@ -141,82 +154,82 @@ public class GalApp{
 			
 			switch(select){
 			case 1:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 1) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 1) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 2:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 2) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 2) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 3:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 3) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 3) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 4:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 4) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 4) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 5:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 5) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 5) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 6:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 6) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 6) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 			
 			case 7:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 7) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 7) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 				
 			case 8:
-				for(int i= 0;i<girls.length;i++) {
-					if(girls[i].positionNumber == 8) {
-						girls[i].talk();
-						break;
-					}
-				}
+//				for(int i= 0;i<girls.length;i++) {
+//					if(girls[i].positionNumber == 8) {
+//						girls[i].talk();
+//						break;
+//					}
+//				}
 				
 				break;
 			default :
