@@ -1,10 +1,13 @@
 package galGame.main;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
+import galGame.chara.FifthGirl;
+import galGame.chara.FirstGirl;
+import galGame.chara.FourthGirl;
 import galGame.chara.Player;
 import galGame.chara.SecondGirl;
+import galGame.chara.SixthGirl;
+import galGame.chara.ThirdGirl;
 import galGame.school.School;
 
 public class GalApp{
@@ -15,16 +18,7 @@ public class GalApp{
 		Player player = new Player();
 		
 		//キャラクター
-		SecondGirl secondGirl = new SecondGirl();
-		System.out.println(secondGirl.getGirlName());
-		
-//		Girl[] girls = new Girl[5];
-//		girls[0].name = "東山霧乃";
-//		girls[1].name = "春日小麦";
-//		girls[2].name = "鈴木翠華";
-//		girls[3].name = "秋月光梨";
-//		girls[4].name = "三国蜜柑";
-//		girls[5].name = "琴原紫音";
+		freeTime();
 		
 		//キャラクターが訪れる場所
 		School school = new School();
@@ -108,24 +102,268 @@ public class GalApp{
 	
 	static void positioning() {
 		
-		//キャラクター
-		SecondGirl[] girls = new SecondGirl[5];
+		FirstGirl firstGirl = new FirstGirl();
+		SecondGirl secondGirl = new SecondGirl();
+		ThirdGirl thirdGirl = new ThirdGirl();
+		FourthGirl fourthGirl = new FourthGirl();
+		FifthGirl fifthGirl = new FifthGirl();
+		SixthGirl sixthGirl = new SixthGirl();
 		
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		 
-        //1～8の整数値を持つリストを用意
-        for(int i = 1 ; i <= 8 ; i++) {
-                list.add(i);
-        }
-        //リストを表示（確認用）
-        System.out.println(list);
+		// 1～8までの数値を収める配列を6人分準備
+		int[] num = new int[6];
+		// 判定用の変数を準備
+		boolean countFlg= false;
 
-       //shuffleメソッドで上で作ったリストをシャッフル
-        Collections.shuffle(list);
-
-        //ランダムにした結果を表示
-        System.out.println(list);
-        
+		// 6回、繰り返す
+		for (int i = 0; i < num.length; i++) {
+			// 毎回、1～8のランダムな数値を生成
+			int raNum = (int) ((Math.random() * 8) + 1);
+			// 毎回、生成された数と生成済みの数を比較
+			
+			for (int j = 0; j < num.length; j++) {
+				
+				// もし、生成済みの数値と同じものがあれば・・・
+				if (num[j] == raNum) {
+					countFlg = true;
+				}
+			}
+			
+			if (countFlg) {
+				i--;
+				countFlg = false;
+				continue;
+			} else {
+				// 重複した数値が無ければ
+				num[i] = raNum;
+				
+				//女の子の気まぐれ度合いによって普段いかない場所に行くかどうかの判定を行う（7以上であれば行く）
+				int whiRanNum = (int) ((Math.random() * 10) + 1);
+				int whimsyNum = 7;
+				
+				//女の子の現在いる場所を格納する
+				switch(i) {
+				case 0:
+					
+					//firstGirlは"1"か"2"か"3"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 1) {
+						
+						if(whiRanNum >= whimsyNum) {
+							firstGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 2){
+						
+						if(whiRanNum >= whimsyNum) {
+							firstGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 3){
+						
+						if(whiRanNum >= whimsyNum) {
+							firstGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						firstGirl.setPositionNum(num[i]);
+					}
+					
+					break;
+				case 1:
+					
+					//secondGirlは"1"か"5"か"8"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 1) {
+						
+						if(whiRanNum >= whimsyNum) {
+							secondGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 5){
+						
+						if(whiRanNum >= whimsyNum) {
+							secondGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 8){
+						
+						if(whiRanNum >= whimsyNum) {
+							secondGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						secondGirl.setPositionNum(num[i]);
+					}
+					
+					break;
+				case 2:
+					
+					//thirdGirlは"3"か"4"か"8"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 3) {
+						
+						if(whiRanNum >= whimsyNum) {
+							thirdGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 4){
+						
+						if(whiRanNum >= whimsyNum) {
+							thirdGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 8){
+						
+						if(whiRanNum >= whimsyNum) {
+							thirdGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						thirdGirl.setPositionNum(num[i]);
+					}
+					
+					break;
+				case 3:
+					
+					//fourthGirlは"2"か"5"か"6"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 2) {
+						
+						if(whiRanNum >= whimsyNum) {
+							fourthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 5){
+						
+						if(whiRanNum >= whimsyNum) {
+							fourthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 6){
+						
+						if(whiRanNum >= whimsyNum) {
+							fourthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						fourthGirl.setPositionNum(num[i]);
+					}
+					
+					break;
+				case 4:
+					
+					//fifthGirlは"2"か"3"か"7"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 2) {
+						
+						if(whiRanNum >= whimsyNum) {
+							fifthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 3){
+						
+						if(whiRanNum >= whimsyNum) {
+							fifthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 7){
+						
+						if(whiRanNum >= whimsyNum) {
+							fifthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						fifthGirl.setPositionNum(num[i]);
+					}
+					
+					break;
+				case 5:
+					
+					//sixthGirlは"4"か"6"か"7"が現在いる場所に指定されたとき、気まぐれ値が高い場合のみ向かう
+					if(num[i] == 2) {
+						
+						if(whiRanNum >= whimsyNum) {
+							sixthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 6){
+						
+						if(whiRanNum >= whimsyNum) {
+							sixthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else if(num[i] == 7){
+						
+						if(whiRanNum >= whimsyNum) {
+							sixthGirl.setPositionNum(num[i]);
+						}else {
+							i--;
+							continue;
+						}
+						
+					}else {
+						sixthGirl.setPositionNum(num[i]);
+					}
+					
+					sixthGirl.setPositionNum(num[i]);
+					break;
+				}
+				System.out.println("気まぐれ"+whiRanNum);
+				System.out.println(num[i]);
+			}
+		}
+		System.out.println(firstGirl.getPositionNum() + firstGirl.getGirlName());
+		System.out.println(secondGirl.getPositionNum() + secondGirl.getGirlName());
+		System.out.println(thirdGirl.getPositionNum() + thirdGirl.getGirlName());
+		System.out.println(fourthGirl.getPositionNum() + fourthGirl.getGirlName());
+		System.out.println(fifthGirl.getPositionNum() + fifthGirl.getGirlName());
+		System.out.println(sixthGirl.getPositionNum() + sixthGirl.getGirlName());
 		//キャラクターを配置するフィールドを指定する番号を代入
 			
 //		for(int i= 0;i<girls.length;i++) {
@@ -149,7 +387,7 @@ public class GalApp{
 		
 		do {
 			System.out.println("場所> 1:2-Bの教室　2:体育館前　3:グラウンド　4:美術室　"
-					+ "5:コンピュータ室　6:図書室　7:玄関ホール　8:音楽室");
+					+ "5:コンピュータ室　6:図書室　7:屋上　8:音楽室");
 			select = sc.nextInt();
 			
 			switch(select){

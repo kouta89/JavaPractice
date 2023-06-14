@@ -6,7 +6,7 @@ public class FourthGirl extends Girl{
 		//女の子の名前
 		this.name = "秋月光梨";
 		
-		//配置場所
+		//現在いる場所（2-B教室などの場所を意味する）
 		this.positionNum = 0;
 		
 		//好感度
