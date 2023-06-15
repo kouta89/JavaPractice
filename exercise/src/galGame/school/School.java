@@ -1,11 +1,17 @@
 package galGame.school;
 
-import galGame.chara.SecondGirl;
-
 public class School{
 	
-	public String name;
+	//場所名
+	protected String name = "";
+	//この場所を訪れた女の子の番号
+	protected int girlNum = 0;
 	
-	public SecondGirl girl;
+	//ゲッター
+	public String getPlaceName(){return name;}
+	public int getGirlNum() {return girlNum;}
 	
+	//セッター
+	public void setGirlNum(int girlNum) {this.girlNum = girlNum;}
+
 }

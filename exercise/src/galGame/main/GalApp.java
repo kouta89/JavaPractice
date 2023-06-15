@@ -8,7 +8,14 @@ import galGame.chara.Player;
 import galGame.chara.SecondGirl;
 import galGame.chara.SixthGirl;
 import galGame.chara.ThirdGirl;
-import galGame.school.School;
+import galGame.school.ArtRoom;
+import galGame.school.ClassRoom2b;
+import galGame.school.ComputerRoom;
+import galGame.school.Ground;
+import galGame.school.GymFront;
+import galGame.school.Library;
+import galGame.school.MusicRoom;
+import galGame.school.Rooftop;
 
 public class GalApp{
 	public static void main(String[] args) {
@@ -19,21 +26,6 @@ public class GalApp{
 		
 		//キャラクター
 		freeTime();
-		
-		//キャラクターが訪れる場所
-		School school = new School();
-//		school.name = "2-Bの教室";
-//		school.girl = girls;
-//		System.out.println("2-Bの教室にいるのは"+school.girl.name);
-//		School[] school = new School[7];
-//		school[0].name = "2-Bの教室";
-//		school[1].name = "体育館前";
-//		school[2].name = "グラウンド";
-//		school[3].name = "美術室";
-//		school[4].name = "コンピュータ室";
-//		school[5].name = "図書室";
-//		school[6].name = "玄関ホール";
-//		school[7].name = "音楽室";
 		
 		//主人公の名前を入力
 		System.out.println("僕の名前は…");
@@ -102,12 +94,26 @@ public class GalApp{
 	
 	static void positioning() {
 		
+		//インスタンス------------------------------
+		//キャラクター
 		FirstGirl firstGirl = new FirstGirl();
 		SecondGirl secondGirl = new SecondGirl();
 		ThirdGirl thirdGirl = new ThirdGirl();
 		FourthGirl fourthGirl = new FourthGirl();
 		FifthGirl fifthGirl = new FifthGirl();
 		SixthGirl sixthGirl = new SixthGirl();
+		
+		//女の子が訪れる場所
+		ClassRoom2b classRoom2b = new ClassRoom2b();
+		GymFront gymFront = new GymFront();
+		Ground ground = new Ground();
+		ArtRoom artRoom = new ArtRoom();
+		ComputerRoom computerRoom = new ComputerRoom();
+		Library library = new Library();
+		Rooftop rooftop = new Rooftop();
+		MusicRoom musicRoom = new MusicRoom();
+		
+		//-------------------------------------------
 		
 		// 1～8までの数値を収める配列を6人分準備
 		int[] num = new int[6];
@@ -354,8 +360,45 @@ public class GalApp{
 					sixthGirl.setPositionNum(num[i]);
 					break;
 				}
+				
 				System.out.println("気まぐれ"+whiRanNum);
 				System.out.println(num[i]);
+				
+				//キャラクターを配置するフィールドを指定する番号を代入
+				switch(num[i]) {
+				case 1:
+					classRoom2b.setGirlNum(i);
+					System.out.println(classRoom2b.getPlaceName());
+					break;
+				case 2:
+					gymFront.setGirlNum(i);
+					System.out.println(gymFront.getPlaceName());
+					break;
+				case 3:
+					ground.setGirlNum(i);
+					System.out.println(ground.getPlaceName());
+					break;
+				case 4:
+					artRoom.setGirlNum(i);
+					System.out.println(artRoom.getPlaceName());
+					break;
+				case 5:
+					computerRoom.setGirlNum(i);
+					System.out.println(computerRoom.getPlaceName());
+					break;
+				case 6:
+					library.setGirlNum(i);
+					System.out.println(library.getPlaceName());
+					break;
+				case 7:
+					rooftop.setGirlNum(i);
+					System.out.println(rooftop.getPlaceName());
+					break;
+				case 8:
+					musicRoom.setGirlNum(i);
+					System.out.println(musicRoom.getPlaceName());
+					break;
+				}
 			}
 		}
 		System.out.println(firstGirl.getPositionNum() + firstGirl.getGirlName());
@@ -364,12 +407,7 @@ public class GalApp{
 		System.out.println(fourthGirl.getPositionNum() + fourthGirl.getGirlName());
 		System.out.println(fifthGirl.getPositionNum() + fifthGirl.getGirlName());
 		System.out.println(sixthGirl.getPositionNum() + sixthGirl.getGirlName());
-		//キャラクターを配置するフィールドを指定する番号を代入
-			
-//		for(int i= 0;i<girls.length;i++) {
-//			girls[i].setPositionNum(list.get(i));
-//		}
-		
+	
 
 	}
 	
@@ -379,7 +417,15 @@ public class GalApp{
 		Scanner sc = new Scanner(System.in);
 		
 		//キャラクター
-		SecondGirl[] girls = new SecondGirl[5];
+		ClassRoom2b classRoom2b = new ClassRoom2b();
+		GymFront gymFront = new GymFront();
+		Ground ground = new Ground();
+		ArtRoom artRoom = new ArtRoom();
+		ComputerRoom computerRoom = new ComputerRoom();
+		Library library = new Library();
+		Rooftop rooftop = new Rooftop();
+		MusicRoom musicRoom = new MusicRoom();
+		
 		
 		
 		//選択肢
@@ -392,6 +438,7 @@ public class GalApp{
 			
 			switch(select){
 			case 1:
+				
 //				for(int i= 0;i<girls.length;i++) {
 //					if(girls[i].positionNumber == 1) {
 //						girls[i].talk();
