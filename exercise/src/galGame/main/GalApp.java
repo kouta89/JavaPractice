@@ -1,4 +1,5 @@
 package galGame.main;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import galGame.chara.FifthGirl;
@@ -401,6 +402,70 @@ public class GalApp{
 				}
 			}
 		}
+		
+		//女の子が訪れなかった場所を特定し、その場所のgirlNumに誰もいないことを示す"0"を代入する------
+		int girlQuantity = 6;
+		int ereaQuantity = 8;
+		boolean noOneHereFlg = false;
+		int calculate = ereaQuantity - girlQuantity;
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for(int i = 1;i <= ereaQuantity; i++) {
+			for(int j = 0;j < girlQuantity; j++) {
+				
+				if(i == num[j]) {
+					noOneHereFlg = true;
+					break;
+				}
+				
+			}
+			
+			if(noOneHereFlg == false) {
+				list.add(i);
+			}else {
+				noOneHereFlg = false;
+			}
+		}
+		
+		for(int i=0;i<list.size();i++) {
+			switch(list.get(i)) {
+			case 1:
+				classRoom2b.setGirlNum(0);
+				System.out.println(classRoom2b.getPlaceName());
+				break;
+			case 2:
+				gymFront.setGirlNum(0);
+				System.out.println(gymFront.getPlaceName());
+				break;
+			case 3:
+				ground.setGirlNum(0);
+				System.out.println(ground.getPlaceName());
+				break;
+			case 4:
+				artRoom.setGirlNum(0);
+				System.out.println(artRoom.getPlaceName());
+				break;
+			case 5:
+				computerRoom.setGirlNum(0);
+				System.out.println(computerRoom.getPlaceName());
+				break;
+			case 6:
+				library.setGirlNum(0);
+				System.out.println(library.getPlaceName());
+				break;
+			case 7:
+				rooftop.setGirlNum(0);
+				System.out.println(rooftop.getPlaceName());
+				break;
+			case 8:
+				musicRoom.setGirlNum(0);
+				System.out.println(musicRoom.getPlaceName());
+				break;
+			}
+		}
+		
+		//-----------------------------------------------------------------------------------------
+		
 		System.out.println(firstGirl.getPositionNum() + firstGirl.getGirlName());
 		System.out.println(secondGirl.getPositionNum() + secondGirl.getGirlName());
 		System.out.println(thirdGirl.getPositionNum() + thirdGirl.getGirlName());
@@ -438,13 +503,8 @@ public class GalApp{
 			
 			switch(select){
 			case 1:
-				
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 1) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
+				//if(classRoom2b.getGirlNum() )
+//				
 				
 				break;
 				
