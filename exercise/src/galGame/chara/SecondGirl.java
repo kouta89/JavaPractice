@@ -13,7 +13,7 @@ public class SecondGirl extends Girl{
 		this.intimacy = 0;
 	}
 	
-	public void talk() {
+	public void encount() {
 		System.out.println(this.name+"さんがいる");
 		System.out.println("どうしよう、話かけてみようか…");
 	}

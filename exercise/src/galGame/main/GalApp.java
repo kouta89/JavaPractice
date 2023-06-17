@@ -482,6 +482,14 @@ public class GalApp{
 		Scanner sc = new Scanner(System.in);
 		
 		//キャラクター
+		FirstGirl firstGirl = new FirstGirl();
+		SecondGirl secondGirl = new SecondGirl();
+		ThirdGirl thirdGirl = new ThirdGirl();
+		FourthGirl fourthGirl = new FourthGirl();
+		FifthGirl fifthGirl = new FifthGirl();
+		SixthGirl sixthGirl = new SixthGirl();
+		
+		//女の子が訪れる場所
 		ClassRoom2b classRoom2b = new ClassRoom2b();
 		GymFront gymFront = new GymFront();
 		Ground ground = new Ground();
@@ -503,6 +511,8 @@ public class GalApp{
 			
 			switch(select){
 			case 1:
+				
+				firstGirl.encount();
 				//if(classRoom2b.getGirlNum() )
 //				
 				
