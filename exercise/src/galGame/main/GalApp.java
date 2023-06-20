@@ -362,8 +362,8 @@ public class GalApp{
 					break;
 				}
 				
-				System.out.println("気まぐれ"+whiRanNum);
-				System.out.println(num[i]);
+//				System.out.println("気まぐれ"+whiRanNum);
+//				System.out.println(num[i]);
 				
 				//キャラクターを配置するフィールドを指定する番号を代入
 				switch(num[i]) {
@@ -472,6 +472,9 @@ public class GalApp{
 		System.out.println(fourthGirl.getPositionNum() + fourthGirl.getGirlName());
 		System.out.println(fifthGirl.getPositionNum() + fifthGirl.getGirlName());
 		System.out.println(sixthGirl.getPositionNum() + sixthGirl.getGirlName());
+		
+		System.out.println();
+		System.out.println(classRoom2b.getGirlNum());
 	
 
 	}
@@ -499,10 +502,12 @@ public class GalApp{
 		Rooftop rooftop = new Rooftop();
 		MusicRoom musicRoom = new MusicRoom();
 		
-		
+		System.out.println();
+		System.out.println(classRoom2b.getGirlNum());
 		
 		//選択肢
 		int select = 0;
+		int girlNum = 0;
 		
 		do {
 			System.out.println("場所> 1:2-Bの教室　2:体育館前　3:グラウンド　4:美術室　"
@@ -511,86 +516,75 @@ public class GalApp{
 			
 			switch(select){
 			case 1:
-				
-				firstGirl.encount();
-				//if(classRoom2b.getGirlNum() )
-//				
-				
+				girlNum = classRoom2b.getGirlNum();
 				break;
 				
 			case 2:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 2) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = gymFront.getGirlNum();
 				break;
 				
 			case 3:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 3) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = ground.getGirlNum();
 				break;
 				
 			case 4:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 4) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = artRoom.getGirlNum();
 				break;
 				
 			case 5:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 5) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = computerRoom.getGirlNum();
 				break;
 				
 			case 6:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 6) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = library.getGirlNum();
 				break;
-			
+
 			case 7:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 7) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = rooftop.getGirlNum();
 				break;
 				
 			case 8:
-//				for(int i= 0;i<girls.length;i++) {
-//					if(girls[i].positionNumber == 8) {
-//						girls[i].talk();
-//						break;
-//					}
-//				}
-				
+				girlNum = musicRoom.getGirlNum();
 				break;
 			default :
 				System.out.println("選択肢にしたがって数字を入力してください");
 			}
 		}while(select > 8 || select < 1);
+		
+		switch(girlNum){
+		case 0:
+			System.out.println("しゃべる人がいなくて暇だな…");
+			System.out.println("他の場所にでも行ってみるか");
+			move();
+			break;
+			
+		case 1:
+			
+			firstGirl.encount();			
+			break;
+			
+		case 2:
+			secondGirl.encount();
+			break;
+			
+		case 3:
+			thirdGirl.encount();
+			break;
+			
+		case 4:
+			fourthGirl.encount();
+			break;
+			
+		case 5:
+			fifthGirl.encount();
+			break;
+			
+		case 6:
+			sixthGirl.encount();
+			break;
+		default :
+			System.out.println("error");
+		}
 	}
 
 }

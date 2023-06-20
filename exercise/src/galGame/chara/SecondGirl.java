@@ -5,6 +5,7 @@ public class SecondGirl extends Girl{
 	public SecondGirl(){
 		//女の子の名前
 		this.name = "春日小麦";
+		this.nickname = "春日さん";
 		
 		//現在いる場所（2-B教室などの場所を意味する）
 		this.positionNum = 0;
@@ -14,7 +15,7 @@ public class SecondGirl extends Girl{
 	}
 	
 	public void encount() {
-		System.out.println(this.name+"さんがいる");
+		System.out.println("あれは"+this.nickname+"かな");
 		System.out.println("どうしよう、話かけてみようか…");
 	}
 	
