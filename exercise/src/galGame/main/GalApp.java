@@ -19,11 +19,36 @@ import galGame.school.MusicRoom;
 import galGame.school.Rooftop;
 
 public class GalApp{
+	
+	//インスタンス化------------------------------
+	public static Scanner sc = new Scanner(System.in);
+	
+	//キャラクター
+	public static Player player = new Player();
+	public static FirstGirl firstGirl = new FirstGirl();
+	public static SecondGirl secondGirl = new SecondGirl();
+	public static ThirdGirl thirdGirl = new ThirdGirl();
+	public static FourthGirl fourthGirl = new FourthGirl();
+	public static FifthGirl fifthGirl = new FifthGirl();
+	public static SixthGirl sixthGirl = new SixthGirl();
+	
+	//女の子が訪れる場所
+	public static ClassRoom2b classRoom2b = new ClassRoom2b();
+	public static GymFront gymFront = new GymFront();
+	public static Ground ground = new Ground();
+	public static ArtRoom artRoom = new ArtRoom();
+	public static ComputerRoom computerRoom = new ComputerRoom();
+	public static Library library = new Library();
+	public static Rooftop rooftop = new Rooftop();
+	public static MusicRoom musicRoom = new MusicRoom();
+	
+	//-------------------------------------------
+	
+	//move回数制限(休み時間一回につき場所移動できるのは３回まで)
+	public static int moveLimitNum = 1;
+	public static int moveLimit = moveLimitNum;
+	
 	public static void main(String[] args) {
-		
-		//インスタンス化
-		Scanner sc = new Scanner(System.in);
-		Player player = new Player();
 		
 		//キャラクター
 		freeTime();
@@ -65,7 +90,6 @@ public class GalApp{
 	}
 	
 	static void freeTime(){
-		Scanner sc = new Scanner(System.in);
 		
 		//選択肢
 		int select = 0;
@@ -95,26 +119,6 @@ public class GalApp{
 	
 	static void positioning() {
 		
-		//インスタンス------------------------------
-		//キャラクター
-		FirstGirl firstGirl = new FirstGirl();
-		SecondGirl secondGirl = new SecondGirl();
-		ThirdGirl thirdGirl = new ThirdGirl();
-		FourthGirl fourthGirl = new FourthGirl();
-		FifthGirl fifthGirl = new FifthGirl();
-		SixthGirl sixthGirl = new SixthGirl();
-		
-		//女の子が訪れる場所
-		ClassRoom2b classRoom2b = new ClassRoom2b();
-		GymFront gymFront = new GymFront();
-		Ground ground = new Ground();
-		ArtRoom artRoom = new ArtRoom();
-		ComputerRoom computerRoom = new ComputerRoom();
-		Library library = new Library();
-		Rooftop rooftop = new Rooftop();
-		MusicRoom musicRoom = new MusicRoom();
-		
-		//-------------------------------------------
 		
 		// 1～8までの数値を収める配列を6人分準備
 		int[] num = new int[6];
@@ -407,7 +411,7 @@ public class GalApp{
 		int girlQuantity = 6;
 		int ereaQuantity = 8;
 		boolean noOneHereFlg = false;
-		int calculate = ereaQuantity - girlQuantity;
+		
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		for(int i = 1;i <= ereaQuantity; i++) {
@@ -481,30 +485,6 @@ public class GalApp{
 	
 	static void move() {
 		
-		//インスタンス化
-		Scanner sc = new Scanner(System.in);
-		
-		//キャラクター
-		FirstGirl firstGirl = new FirstGirl();
-		SecondGirl secondGirl = new SecondGirl();
-		ThirdGirl thirdGirl = new ThirdGirl();
-		FourthGirl fourthGirl = new FourthGirl();
-		FifthGirl fifthGirl = new FifthGirl();
-		SixthGirl sixthGirl = new SixthGirl();
-		
-		//女の子が訪れる場所
-		ClassRoom2b classRoom2b = new ClassRoom2b();
-		GymFront gymFront = new GymFront();
-		Ground ground = new Ground();
-		ArtRoom artRoom = new ArtRoom();
-		ComputerRoom computerRoom = new ComputerRoom();
-		Library library = new Library();
-		Rooftop rooftop = new Rooftop();
-		MusicRoom musicRoom = new MusicRoom();
-		
-		System.out.println();
-		System.out.println(classRoom2b.getGirlNum());
-		
 		//選択肢
 		int select = 0;
 		int girlNum = 0;
@@ -555,7 +535,10 @@ public class GalApp{
 		case 0:
 			System.out.println("しゃべる人がいなくて暇だな…");
 			System.out.println("他の場所にでも行ってみるか");
-			move();
+			if(moveLimit(moveLimit) == true) {
+				move();
+			}
+			
 			break;
 			
 		case 1:
@@ -585,6 +568,19 @@ public class GalApp{
 		default :
 			System.out.println("error");
 		}
+	}
+	
+	static boolean moveLimit(int limitNum) {
+		moveLimit = limitNum;
+		
+		if(moveLimit <= 0) {
+			moveLimit = moveLimitNum;
+			return false;
+		}else {
+			moveLimit--;
+			return true;
+		}
+	
 	}
 
 }
