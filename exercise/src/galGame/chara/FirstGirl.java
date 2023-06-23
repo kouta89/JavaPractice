@@ -15,7 +15,7 @@ public class FirstGirl extends Girl{
 	}
 	
 	public void encount() {
-		System.out.println("ん、あの人は、"+this.nickname+"さんじゃないか");
+		System.out.println("ん、あの人は、"+this.nickname+"じゃないか");
 		System.out.println("どうしよう、話かけてみようか…");
 	}
 }

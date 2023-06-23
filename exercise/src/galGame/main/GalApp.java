@@ -372,35 +372,35 @@ public class GalApp{
 				//キャラクターを配置するフィールドを指定する番号を代入
 				switch(num[i]) {
 				case 1:
-					classRoom2b.setGirlNum(i);
+					classRoom2b.setGirlNum(i+1);
 					System.out.println(classRoom2b.getPlaceName());
 					break;
 				case 2:
-					gymFront.setGirlNum(i);
+					gymFront.setGirlNum(i+1);
 					System.out.println(gymFront.getPlaceName());
 					break;
 				case 3:
-					ground.setGirlNum(i);
+					ground.setGirlNum(i+1);
 					System.out.println(ground.getPlaceName());
 					break;
 				case 4:
-					artRoom.setGirlNum(i);
+					artRoom.setGirlNum(i+1);
 					System.out.println(artRoom.getPlaceName());
 					break;
 				case 5:
-					computerRoom.setGirlNum(i);
+					computerRoom.setGirlNum(i+1);
 					System.out.println(computerRoom.getPlaceName());
 					break;
 				case 6:
-					library.setGirlNum(i);
+					library.setGirlNum(i+1);
 					System.out.println(library.getPlaceName());
 					break;
 				case 7:
-					rooftop.setGirlNum(i);
+					rooftop.setGirlNum(i+1);
 					System.out.println(rooftop.getPlaceName());
 					break;
 				case 8:
-					musicRoom.setGirlNum(i);
+					musicRoom.setGirlNum(i+1);
 					System.out.println(musicRoom.getPlaceName());
 					break;
 				}
