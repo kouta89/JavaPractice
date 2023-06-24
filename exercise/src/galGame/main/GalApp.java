@@ -568,6 +568,35 @@ public class GalApp{
 		default :
 			System.out.println("error");
 		}
+		
+		if(moveLimit(moveLimit) == true) {
+			do {
+				System.out.println("行動> 1:話しかける　2:別の場所に行く");
+				select = sc.nextInt();
+				
+				switch(select){
+				case 1:
+					
+					
+					
+					
+					
+					
+					
+					
+					break;
+					
+				case 2:
+					if(moveLimit(moveLimit) == true) {
+						move();
+					}
+					break;
+				
+				default :
+					System.out.println("選択肢にしたがって数字を入力してください");
+				}
+			}while(select > 2 || select < 1);
+		}
 	}
 	
 	static boolean moveLimit(int limitNum) {
