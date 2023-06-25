@@ -570,6 +570,9 @@ public class GalApp{
 		}
 		
 		if(moveLimit(moveLimit) == true) {
+			
+			int takeGirlNum = select;
+			
 			do {
 				System.out.println("行動> 1:話しかける　2:別の場所に行く");
 				select = sc.nextInt();
@@ -577,12 +580,7 @@ public class GalApp{
 				switch(select){
 				case 1:
 					
-					
-					
-					
-					
-					
-					
+					takeGirl(takeGirlNum);
 					
 					break;
 					
@@ -596,6 +594,32 @@ public class GalApp{
 					System.out.println("選択肢にしたがって数字を入力してください");
 				}
 			}while(select > 2 || select < 1);
+		}
+	}
+	
+	static void takeGirl(int girlNum) {
+		
+		switch(girlNum) {
+		case 1:
+			System.out.println("東山霧乃");
+			break;
+		case 2:
+			System.out.println("春日小麦");
+			break;
+		case 3:
+			System.out.println("鈴木翠華");
+			break;
+		case 4:
+			System.out.println("秋月光梨");
+			break;
+		case 5:
+			System.out.println("三国蜜柑");
+			break;
+		case 6:
+			System.out.println("琴原紫音");
+			break;
+		default :
+			System.out.println("エラー");
 		}
 	}
 	
