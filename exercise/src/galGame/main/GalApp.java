@@ -580,7 +580,7 @@ public class GalApp{
 				switch(select){
 				case 1:
 					
-					takeGirl(takeGirlNum);
+					talkGirl(takeGirlNum);
 					
 					break;
 					
@@ -597,7 +597,7 @@ public class GalApp{
 		}
 	}
 	
-	static void takeGirl(int girlNum) {
+	static void talkGirl(int girlNum) {
 		
 		switch(girlNum) {
 		case 1:

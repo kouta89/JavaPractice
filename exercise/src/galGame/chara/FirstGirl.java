@@ -18,4 +18,9 @@ public class FirstGirl extends Girl{
 		System.out.println("ん、あの人は、"+this.nickname+"じゃないか");
 		System.out.println("どうしよう、話かけてみようか…");
 	}
+	
+	public void talk1() {
+		System.out.println("あれ、センパイじゃないですか");
+		System.out.println("どうしたんですか。話とかしちゃいます？");
+	}
 }
