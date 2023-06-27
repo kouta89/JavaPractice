@@ -543,7 +543,7 @@ public class GalApp{
 			
 		case 1:
 			
-			firstGirl.encount();			
+			firstGirl.encount1();
 			break;
 			
 		case 2:
@@ -601,7 +601,8 @@ public class GalApp{
 		
 		switch(girlNum) {
 		case 1:
-			System.out.println("東山霧乃");
+			
+			firstGirl.addTalk();
 			break;
 		case 2:
 			System.out.println("春日小麦");

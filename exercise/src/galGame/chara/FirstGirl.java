@@ -14,13 +14,15 @@ public class FirstGirl extends Girl{
 		this.intimacy=0;
 	}
 	
-	public void encount() {
-		System.out.println("ん、あの人は、"+this.nickname+"じゃないか");
+	public void encount1() {
+		System.out.println("ん、あれは"+this.nickname+"じゃないか");
+		System.out.println("………");
+		System.out.println("あ、センパイ");
+		System.out.println("あのー、何でしょうか");
 		System.out.println("どうしよう、話かけてみようか…");
 	}
 	
-	public void talk1() {
-		System.out.println("あれ、センパイじゃないですか");
-		System.out.println("どうしたんですか。話とかしちゃいます？");
+	public void addTalk() {
+		System.out.println("そうですね、まず何から話しましょうか");
 	}
 }
