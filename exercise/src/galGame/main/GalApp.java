@@ -51,18 +51,27 @@ public class GalApp{
 	public static void main(String[] args) {
 		
 		//キャラクター
-		freeTime();
 		
 		//主人公の名前を入力
 		System.out.println("僕の名前は…");
-		player.setPlayerName(sc.nextLine());
+		System.out.println("………");
+		System.out.println("苗字を入力してください");
+		player.setLastName(sc.nextLine());
 		
-		while((player.getPlayerName().length() < 0) && (player.getPlayerName().length() >= 8)) {
-			System.out.println("1文字以上、８文字以内でご入力ください");
-			player.setPlayerName(sc.nextLine());
+		while((player.getLastName().length() < 0) && (player.getLastName().length() >= 4)) {
+			System.out.println("1文字以上、4文字以内でご入力ください");
+			player.setLastName(sc.nextLine());
 		}
 		
-		System.out.println(player.getPlayerName()+"だ。");
+		System.out.println("名前を入力してください");
+		player.setFirstName(sc.nextLine());
+		
+		while((player.getFirstName().length() < 0) && (player.getFirstName().length() >= 4)) {
+			System.out.println("1文字以上、4文字以内でご入力ください");
+			player.setFirstName(sc.nextLine());
+		}
+		
+		System.out.println(player.getLastName()+player.getFirstName()+"だ。");
 		
 		System.out.println("もうすぐ夏休みだ…");
 		System.out.println("このままじゃだめだよな。今年こそ、彼女と夏休みを過ごしたい！");

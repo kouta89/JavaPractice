@@ -19,7 +19,7 @@ public class FirstGirl extends Girl{
 		System.out.println("………");
 		System.out.println("あ、センパイ");
 		System.out.println("あのー、何でしょうか");
-		System.out.println("どうしよう、話かけてみようか…");
+		System.out.println("どうしよう、今日は"+this.nickname+"と話そうか…");
 	}
 	
 	public void addTalk() {

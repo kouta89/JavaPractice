@@ -4,16 +4,17 @@ package galGame.chara;
 public class Player{
 	
 	//主人公の名前
-	private String name;
+	private String lastName;
+	
+	private String firstName;
 	
 	//ゲッター
-	public String getPlayerName() {return this.name;}
-	//セッター
-	public void setPlayerName(String playerName) {this.name = playerName;}
+	public String getLastName() {return this.lastName;}
+	public String getFirstName() {return this.firstName;}
 	
-	void move() {
-		
-		System.out.println("どうしよう、話かけてみようか…");
-	}
+	//セッター
+	public void setLastName(String lastName) {this.lastName = lastName;}
+	public void setFirstName(String firstName) {this.firstName = firstName;}
+	
 		
 }
