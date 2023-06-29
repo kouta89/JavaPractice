@@ -556,11 +556,11 @@ public class GalApp{
 			break;
 			
 		case 2:
-			secondGirl.encount();
+			secondGirl.encount1();
 			break;
 			
 		case 3:
-			thirdGirl.encount();
+			thirdGirl.encount1();
 			break;
 			
 		case 4:

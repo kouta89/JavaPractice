@@ -16,20 +16,15 @@ public class ThirdGirl extends Girl{
 		this.intimacy = 0;
 	}
 	
-	public void encount() {
-		System.out.println("あそこにいるのは"+this.nickname+"だな");
-		System.out.println("どうしよう、話かけてみようか…");
-	}
-	
 	public void encount1() {
 		System.out.println("あそこにいるのは"+this.nickname+"だな");
 		System.out.println("………");
 		System.out.println("あ、"+player.getFirstName()+"じゃん");
 		System.out.println("どうしたんよ、しけた面さらしちゃってさ");
-		System.out.println("どうしよう、今日は"+this.nickname+"と話そうか…");
+		System.out.println("どうしよう、"+this.nickname+"と話そうか…");
 	}
 	
 	public void addTalk() {
-		System.out.println("ああ、お話しね、おーきーどーきー");
+		System.out.println("じゃあ、話でもしますか");
 	}
 }

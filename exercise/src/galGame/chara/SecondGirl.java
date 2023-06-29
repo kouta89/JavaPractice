@@ -14,9 +14,16 @@ public class SecondGirl extends Girl{
 		this.intimacy = 0;
 	}
 	
-	public void encount() {
-		System.out.println("あれは"+this.nickname+"かな");
-		System.out.println("どうしよう、話かけてみようか…");
+	public void encount1() {
+		System.out.println("あそこにいるのは"+this.nickname+"かな");
+		System.out.println("………");
+		System.out.println("あ、"+player.getLastName()+"先輩！");
+		System.out.println("こんなところで何してるんですか？");
+		System.out.println("どうしよう、"+this.nickname+"と話そうか…");
+	}
+	
+	public void addTalk() {
+		System.out.println("仕方ないので付き合ってあげます！");
 	}
 	
 	
